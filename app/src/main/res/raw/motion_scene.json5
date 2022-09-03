@@ -1,0 +1,56 @@
+{
+  ConstraintSets: {
+    start: {
+      gray_block: {
+        start: ["parent", "start"],
+        top: ["parent", "top"]
+      },
+      login_text:{
+        start: ["gray_block", "start"],
+        top: ["gray_block", "top", 32]
+      },
+      username_textfield: {
+        start: ["login_text", "start"],
+        top: ["login_text", "top", 16]
+      },
+      password_textfield: {
+          start: ["username_textfield", "start"],
+          top: ["username_textfield", "top", 16]
+      }
+
+    },
+    end: {
+        gray_block: {
+            end: ["parent", "end"],
+            bottom: ["parent", "bottom"]
+        },
+        login_text:{
+            end: ["gray_block", "end"],
+            bottom: ["gray_block", "bottom", 16]
+        },
+        username_textfield: {
+            end: ["login_text", "end"],
+            bottom: ["login_text", "bottom", 8]
+        },
+        password_textfield: {
+            end: ["username_textfield", "end"],
+            bottom: ["username_textfield", "bottom", 8]
+        }
+
+    },
+    Transitions: {
+      default: {
+        from: "start",
+        to: "end",
+      },
+      KeyFrames: {
+        KeyAttributes: [
+          {
+            target: ["login_text", "username_textfield", "password_textfield"]
+          }
+        ]
+      }
+
+    }
+  }
+}
